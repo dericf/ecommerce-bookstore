@@ -1,3 +1,64 @@
 @tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-primary underline;
+  }
+}
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* use TW theme color for the toast notification*/
+  --toastify-color-success: theme("colors.success");
+  --toastify-color-error: theme("colors.error");
+}
+
+@layer components {
+  .nav-item {
+    @apply no-underline;
+  }
+
+  button {
+    /* base button  */
+    @apply py-2 px-4 border text-center rounded hover:opacity-80;
+  }
+
+  .button-default {
+    @apply bg-primary hover:bg-primary text-white font-bold border-primary;
+  }
+
+  .button-outlined {
+    @apply border-primary text-primary hover:bg-primary hover:text-white;
+    background: transparent;
+  }
+
+  button.secondary {
+    @apply border-secondary text-secondary hover:bg-secondary;
+  }
+
+  button.accent {
+    @apply border-accent text-accent hover:bg-accent;
+  }
+
+  button.error {
+    @apply border-error text-error hover:bg-error;
+  }
+
+  button.small {
+    @apply py-1;
+  }
+
+  button:disabled {
+    @apply opacity-25;
+  }
+}
