@@ -84,9 +84,10 @@ const Home: FunctionComponent<HomeProps> = (props) => {
             </div>
           </div>
           <hr className="my-8" />
-          <div className="flex flex-row justify-evenly p-16">
+          <div className="flex flex-row justify-evenly gap-8 p-16">
             <div>
-              <h3>{featuredAuthor?.summary}</h3>
+              <h3 className="font-semibold">About the Author</h3>
+              <p>{featuredAuthor?.summary}</p>
             </div>
             <img
               className="max-h-60 rounded-lg"
