@@ -9,6 +9,7 @@ import { currencyFormatter } from "lib/formatters";
 import { ROUTES } from "lib/routes";
 import { FunctionComponent } from "react";
 import { RouteProps } from "react-router-dom";
+import { toast } from "react-toastify";
 import { removeItemById, updateQuantity } from "store/reducers/cartSlice";
 
 type Props = {};
@@ -33,8 +34,8 @@ const Home: FunctionComponent<RouteProps & Props> = (props) => {
             </strong>
           </p>
           <button
-            title="This feature is not implemented yet"
             className="button-default mt-8 "
+            onClick={() => toast.error("This feature is not implemented yet")}
           >
             Proceed to Checkout
           </button>
