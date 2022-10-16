@@ -6,14 +6,7 @@ import ErrorPage from "components/Routing/ErrorPage";
 import Cart from "components/Cart/Cart";
 import ProductItem from "components/Products/ProductItem";
 import Layout from "components/Layout/Layout";
-import { Page } from "types/general";
-
-const ROUTES: Record<Page, string> = {
-  HOME: "/",
-  PRODUCTS: "/products",
-  PRODUCT_ITEM: "/products/:productId",
-  CART: "/cart",
-};
+import { ROUTES } from "./routes";
 
 const router = createBrowserRouter([
   {
@@ -55,4 +48,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export { ROUTES, router };
+export { router };
