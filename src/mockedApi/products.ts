@@ -50,7 +50,7 @@ const dataset: Product[] = [
   },
 ];
 
-export const getAllProducts = async (): Promise<Product[]> => {
+export const getAllProducts = (): Product[] => {
   // Note: uses fake dataset
   return dataset;
 };
