@@ -1,4 +1,5 @@
 import { Product } from "types/models";
+import { authorInfo, AuthorInfo } from "./authors";
 const dataset: Product[] = [
   {
     id: 1,
@@ -30,7 +31,7 @@ const dataset: Product[] = [
     imageSrc: "https://covers.openlibrary.org/b/id/11868398-L.jpg",
   },
   {
-    id: 22,
+    id: 4,
     author: "Albert Schweitzer",
     title: "J. S. Bach",
     description: "Translated and expanded from the 1908 German edition",
@@ -73,4 +74,9 @@ export const getFeaturedProducts = (): Product[] => {
   // Note: uses fake dataset
   const randomIndex = Math.floor(Math.random() * dataset.length);
   return getAllByAuthor(dataset[randomIndex].author);
+};
+
+export const getFeaturedAuthor = (author: string): AuthorInfo => {
+  // Note: uses fake dataset
+  return authorInfo[author];
 };

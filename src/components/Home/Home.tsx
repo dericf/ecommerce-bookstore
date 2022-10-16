@@ -8,18 +8,22 @@ import Card from "components/Shared/Card";
 import LoadingSpinner from "components/Shared/LoadingSpinner";
 import { currencyFormatter } from "lib/formatters";
 import { ROUTES } from "lib/routes";
-import { getFeaturedProducts } from "mockedApi/products";
+import { AuthorInfo } from "mockedApi/authors";
+import { getFeaturedAuthor, getFeaturedProducts } from "mockedApi/products";
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { generatePath, Link } from "react-router-dom";
 import { Product } from "types/models";
 
 type HomeProps = {};
-
+/**
+ * Main home page that shows a featured book and its author, as well as additional books by that author
+ */
 const Home: FunctionComponent<HomeProps> = (props) => {
   const [loading, setLoading] = useState(true);
   const [featuredProducts, setFeaturedProducts] = useState<
     Product[] | undefined
   >();
+  const [featuredAuthor, setFeaturedAuthor] = useState<AuthorInfo>();
 
   const moreFromAuthor = useMemo(
     () => featuredProducts?.slice(1),
@@ -31,6 +35,13 @@ const Home: FunctionComponent<HomeProps> = (props) => {
     setFeaturedProducts(getFeaturedProducts());
     setLoading(false);
   }, []);
+
+  useEffect(() => {
+    // Fetch the author details once we have received the random featured book.
+    if (featuredProducts) {
+      setFeaturedAuthor(getFeaturedAuthor(featuredProducts[0].author));
+    }
+  }, [featuredProducts]);
 
   return (
     <>
@@ -73,6 +84,16 @@ const Home: FunctionComponent<HomeProps> = (props) => {
             </div>
           </div>
           <hr className="my-8" />
+          <div className="flex flex-row justify-evenly p-16">
+            <div>
+              <h3>{featuredAuthor?.summary}</h3>
+            </div>
+            <img
+              className="max-h-60 rounded-lg"
+              src={featuredAuthor?.imgSrc}
+              alt="author"
+            />
+          </div>
           {featuredProducts.length > 1 && (
             <h3 className="text-lg font-semibold text-center ">
               More titles from {featuredProducts[0].author}
