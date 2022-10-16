@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Simplified Ecommerce Bookstore App
+
+Live demo [on vercel](ecommerce-bookstore-mocha.vercel.app
+)
+
+![image](https://user-images.githubusercontent.com/14207512/196059874-bd7f0837-94a0-489e-b846-0eab59280d14.png)
+
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
