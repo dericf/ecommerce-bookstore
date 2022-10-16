@@ -20,6 +20,7 @@
 :root {
   /* use TW theme color for the toast notification*/
   --toastify-color-success: theme("colors.success");
+  --toastify-color-error: theme("colors.error");
 }
 
 @layer components {
