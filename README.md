@@ -1,7 +1,11 @@
 # Simplified Ecommerce Bookstore App
 
-Live demo [on vercel](ecommerce-bookstore-mocha.vercel.app
-)
+## Screen recording breakdown of the app and the code structure
+
+
+[Link to project overview screen-recording](https://drive.google.com/file/d/1COgoOSKkYHox_fsDIQuE_brRdUUpptZb/view?usp=sharing)
+
+Live demo [on vercel](https://ecommerce-bookstore-mocha.vercel.app)
 
 ![image](https://user-images.githubusercontent.com/14207512/196059874-bd7f0837-94a0-489e-b846-0eab59280d14.png)
 
